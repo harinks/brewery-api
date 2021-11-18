@@ -1,4 +1,7 @@
-var breweries= document.getElementById("container")
+var header = document.createElement("NAV");
+header.innerHTML = `<h1>Breweries List</h1>`
+var content = document.createElement("div");
+content.classList.add("container")
 async function getData() {
     try {
         var data = await fetch("https://api.openbrewerydb.org/breweries")
@@ -12,13 +15,12 @@ async function getData() {
 
 function display(res) {
     res.forEach(element => {
-        var list = document.createElement("div");
-        list.classList.add("card");
-
-        list.innerHTML = `
-        <div class= "cardHead">
-        <h1>${element.name}</h1>
-        </div>
+        var list = document.createElement("div")
+        list.classList.add("card")
+        list.innerHTML= `
+            <div class="cardHead">
+            <h1>${element.name}</h1>
+            </div>
             <div class="cardBody">
                 <h2>Type: ${element.brewery_type}</h2>
                 <h2>Address: </h2>
@@ -31,7 +33,8 @@ function display(res) {
                 <h2>Phone: ${element.phone}</h2>
             </div>`
 
-        breweries.appendChild(list);
-
+            content.appendChild(list);
+            document.body.appendChild(content);
     });
 }
+document.body.appendChild(header);
