@@ -5,7 +5,7 @@ header.style.cssText="height: 100px;margin: auto;display: flex;justify-content: 
 
 var content = document.createElement("div");
 content.classList.add("container")
-content.style.cssText="display:flex;flex-wrap: wrap;align-content: center;justify-content: space-evenly;margin: auto;max-width: 75%;padding: 20px;"
+content.style.cssText="display:flex;flex-wrap: wrap;align-content: center;justify-content: space-evenly;margin: auto;max-width: 100%;padding: 20px;"
 
 
 async function getData() {
